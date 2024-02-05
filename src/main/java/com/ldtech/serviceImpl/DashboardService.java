@@ -70,6 +70,11 @@ public class DashboardService implements IDashboardService{
 		return repo1.findAllByDepartment(department);
 	}
 //
+	public List<EmployeeAllocation> searchAllByDepartment(String department) {
+		// TODO Auto-generated method stub
+		
+		return repo.findAllByDepartment(department);
+	}
 	@Override
 	public List<EmployeeAllocation> searchByClient(String client) {
 		// TODO Auto-generated method stub
@@ -98,10 +103,10 @@ public class DashboardService implements IDashboardService{
 	}
 	
 	@Override
-	public List<EmployeeProfile> searchByStatus(String status) {
+	public List<EmployeeAllocation> searchByStatus(String status) {
 		// TODO Auto-generated method stub
 		
-		return repo1.findAllByStatus(status);
+		return repo.findAllByStatus(status);
 	}
 
 	@Override
@@ -109,4 +114,8 @@ public class DashboardService implements IDashboardService{
 		// TODO Auto-generated method stub
 		return repo2.validateForm(admin_id, password);
 	} 
+	
+	public List<EmployeeAllocation> searchByProjectName(String projectName){
+		return repo.findAllByProjectProjectName(projectName);
+	}
 }
